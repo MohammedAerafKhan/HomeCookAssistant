@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scroll for the “Features” button */
+html { scroll-behavior: smooth; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+/* ---- 3D flip card (modal) ---- */
+.perspective {
+  perspective: 1000px;
+  -webkit-perspective: 1000px; /* Safari */
+}
+
+.card-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d; /* Safari */
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.card-container.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;                /* shorthand for top/right/bottom/left: 0 */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Safari */
+  transform: rotateY(0);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Optional: nicer backdrop blur for older browsers */
+.modal-backdrop {
+  background: rgba(15, 23, 42, 0.7); /* slate-900/70 */
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}

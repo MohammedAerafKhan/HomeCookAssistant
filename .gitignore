@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# Build output
+dist/
+build/
+# Runtime data
+*.pid
+*.seed
+*.log
+# Environment variables
+.env
+# macOS + VSCode
+.DS_Store
+.vscode/
+
+# Explicitly allow all frontend files
+!home-cook-frontend/
+!home-cook-frontend/**/*
